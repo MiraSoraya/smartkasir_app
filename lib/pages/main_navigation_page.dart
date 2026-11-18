@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'dashboard_page.dart';
+import 'profil_toko_page.dart';
 
+// Kerangka navigasi bawah dengan 4 tab utama SmartKasir
 class MainNavigationPage extends StatefulWidget {
   const MainNavigationPage({super.key});
 
@@ -10,28 +12,28 @@ class MainNavigationPage extends StatefulWidget {
 }
 
 class _MainNavigationPageState extends State<MainNavigationPage> {
+  // Indeks tab aktif (0 = Beranda)
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
+    // Tab 0: Beranda & katalog produk
     const DashboardPage(),
+    // Tab 1: Kasir (placeholder Modul M14)
     const Center(
       child: Text(
         'Menu 2: Transaksi Kasir POS (Modul M14)',
         style: TextStyle(fontSize: 16),
       ),
     ),
+    // Tab 2: Riwayat (placeholder Modul M14)
     const Center(
       child: Text(
-        'Menu 3: Riwayat Penjualan & Laporan (Modul M12)',
+        'Menu 3: Riwayat Penjualan & Laporan (Modul M14)',
         style: TextStyle(fontSize: 16),
       ),
     ),
-    const Center(
-      child: Text(
-        'Menu 4: Profil Toko & Pengaturan (Modul M12)',
-        style: TextStyle(fontSize: 16),
-      ),
-    ),
+    // Tab 3: Toko (profil toko & kelola karyawan, Modul M12)
+    const ProfilTokoPage(),
   ];
 
   @override
